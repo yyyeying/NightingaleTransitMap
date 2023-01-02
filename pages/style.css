@@ -4,6 +4,11 @@
     font-size: 18px;
 }
 
+.map-entrance-warpper{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
 .map-entrance:link{
     text-align:center;
     color:rgb(5, 59, 50);
