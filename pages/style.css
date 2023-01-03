@@ -1,57 +1,152 @@
-.menu{
-    text-align:center;
-    color:black;
-    font-size: 18px;
+.map-entrance-warpper {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: 40%;
 }
 
-.map-entrance-warpper{
-    padding-top: 40px;
-    padding-bottom: 40px;
+.map-entrance-warpper.rail-background {
+    background-image: url(./resources/images/map_entrance_background_rail_alt.png);
 }
 
-.map-entrance:link{
-    text-align:center;
-    color:rgb(5, 59, 50);
-    font-size: 36px;
-    border-radius: 10px;
-    border-width: 5px;
-    border-style:solid;
+.map-entrance-warpper.rail-background:hover {
+    background-image: url(./resources/images/map_entrance_background_rail.png);
+}
+
+.map-entrance-warpper.night-background {
+    background-image: url(./resources/images/map_entrance_background_night_alt.png);
+}
+
+.map-entrance-warpper.night-background:hover {
+    background-image: url(./resources/images/map_entrance_background_night.png);
+}
+
+.map-entrance-warpper.brt-background {
+    background-image: url(./resources/images/map_entrance_background_brt_alt.png);
+}
+
+.map-entrance-warpper.brt-background:hover {
+    background-image: url(./resources/images/map_entrance_background_brt.png);
+}
+
+.map-entrance-warpper:hover .map-entrance{
+    font-weight: bold;
+    text-shadow: 0px, 0px, 5px, white;
+}
+
+.map-entrance {
+    text-align: center;
+    color: var(--menu-color);
+    font-size: var(--map-entrance-size);
     text-decoration: none;
-    margin: 10px 10px 10px 10px;
-    padding: 10px 10px 10px 10px;
+    padding-left: 40px;
 }
 
-.map-entrance:visited{
-    text-align:center;
-    color:rgb(5, 59, 50);
-    font-size: 36px;
-    border-radius: 10px;
-    border-width: 5px;
-    border-style:solid;
-    text-decoration: none;
-    margin: 10px 10px 10px 10px;
-    padding: 10px 10px 10px 10px;
-}
-
-.map-entrance:hover{
-    text-align:center;
-    color:white;
-    background-color: rgb(5, 59, 50);
-    font-size: 36px;
-    border-radius: 10px;
-    border-width: 5px;
-    border-style:solid;
-    border-color: rgb(5, 59, 50);
-    text-decoration: none;
-    margin: 10px 10px 10px 10px;
-    padding: 10px 10px 10px 10px;
-}
-
-.title{
-    font-size: 48px;
-}
-
-.map{
+.map-entrance-background {
+    display: block;
     height: auto;
     max-width: 100%;
+    opacity: 0.5;
+}
+
+.map-entrance-background:hover {
+    opacity: 1;
+}
+
+.menu {
+    text-align: center;
+    color: var(--menu-color);
+    font-size: var(--menu-size);
+    text-decoration: none;
+    padding-left: 40px;
+    height: auto;
+    max-width: 100%;
+}
+
+.menu:hover {
+    font-weight: bold;
+}
+
+.title {
+    font-size: var(--title-size);
+    font-weight: bold;
+    padding-left: 40px;
+    color: var(--title-color);
+    line-height: 1;
+}
+
+.title-alt {
+    font-size: var(--title-size);
+    padding-left: 40px;
+    font-weight: normal;
+    color: var(--title-color-alt);
+    line-height: 1;
+}
+
+.title-wrapper {
+    background-color: var(--background-color);
+    background-size: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.title-img {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+
+.background {
+    background-color: var(--background-color);
+    background-size: auto;
+}
+
+.map {
+    height: auto;
+    max-width: 100%;
+    padding-top: 20px;
+}
+
+span.author{
+    font-size: 24px;
+    color: #808080;
+    text-decoration: none;
+}
+
+span.name{
+    font-size: 24px;
+    color: #000000;
+}
+
+span.little-title{
+    font-size: 24px;
+    color: #808080;
+    font-weight: normal;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+p.info{
+    padding-left: 40px;
+    text-align: left;
+}
+
+ul{
+    list-style: none;
+}
+
+:root {
+    --title-color: #000000;
+    --title-color-alt: #808080;
+    --menu-color: #04382f;
+    --menu-size: 36px;
+    --background-color: #F8F8F8;
+    --background-color-hover: #F8F8F8;
+    --title-size: 60px;
+    --map-entrance-size: 48px;
+    --map-entrance-radius: 10px;
+    --map-entrance-width: 5px;
 }
