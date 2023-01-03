@@ -111,7 +111,11 @@
 span.author{
     font-size: 24px;
     color: #808080;
-    text-decoration: none;
+}
+
+span.text{
+    font-size: 24px;
+    color: #808080;
 }
 
 span.name{
