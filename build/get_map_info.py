@@ -13,6 +13,7 @@ if __name__ == "__main__":
         print("get info: {}".format(dir))
         map_list = []
         single_map_dir_list: List[str] = os.listdir(os.path.join(MAP_DIR, dir))
+        single_map_dir_list = sorted(single_map_dir_list)
         for single_map_dir in single_map_dir_list:
             if not os.path.isdir(os.path.join(MAP_DIR, dir, single_map_dir)):
                 continue
