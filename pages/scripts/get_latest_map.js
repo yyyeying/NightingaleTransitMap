@@ -15,7 +15,7 @@ var getMapInfo2 = (mapInfo) => {
     var mapUrl = rootUrl + "/" + mapName + "/" + mapInfo[mapInfo.length - 1].dir
     var mapImg = document.getElementById("map-img");
     var downloadBtn = document.getElementById("download-button")
-    mapImg.src = mapUrl + "/" + mapName + ".jpg";
+    mapImg.src = mapUrl + "/" + mapName + ".webp";
     mapImg.onload = () => {
         downloadBtn.style.display = "block";
         downloadBtn.href = mapUrl + "/" + mapName + ".jpg";

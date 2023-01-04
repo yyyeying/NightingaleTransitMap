@@ -7,27 +7,27 @@
 }
 
 .map-entrance-warpper.rail-background {
-    background-image: url(./resources/images/map_entrance_background_rail_alt.png);
+    background-image: url(./resources/images/map_entrance_background_rail_alt.webp);
 }
 
 .map-entrance-warpper.rail-background:hover {
-    background-image: url(./resources/images/map_entrance_background_rail.png);
+    background-image: url(./resources/images/map_entrance_background_rail.webp);
 }
 
 .map-entrance-warpper.night-background {
-    background-image: url(./resources/images/map_entrance_background_night_alt.png);
+    background-image: url(./resources/images/map_entrance_background_night_alt.webp);
 }
 
 .map-entrance-warpper.night-background:hover {
-    background-image: url(./resources/images/map_entrance_background_night.png);
+    background-image: url(./resources/images/map_entrance_background_night.webp);
 }
 
 .map-entrance-warpper.brt-background {
-    background-image: url(./resources/images/map_entrance_background_brt_alt.png);
+    background-image: url(./resources/images/map_entrance_background_brt_alt.webp);
 }
 
 .map-entrance-warpper.brt-background:hover {
-    background-image: url(./resources/images/map_entrance_background_brt.png);
+    background-image: url(./resources/images/map_entrance_background_brt.webp);
 }
 
 .map-entrance-warpper:hover .map-entrance {
