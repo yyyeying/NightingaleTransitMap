@@ -25,5 +25,5 @@ jobs:
       - name: push changes
         uses: ad-m/github-push-action@master
         with: 
-          github_token: ${{ TRANSIT_MAP_TOKEN }}
+          github_token: ${{ secrets.TRANSIT_MAP_TOKEN }}
           branch: ${{ github.ref }}
