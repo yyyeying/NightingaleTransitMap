@@ -2,6 +2,7 @@ name: update-map-info
 on:
   push:
     paths:
+      - '**.webp'
       - '**.jpg'
       - '**.yml'
       - '**.py'

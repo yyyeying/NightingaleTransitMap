@@ -213,8 +213,12 @@ li.wechat:hover .qrcode {
 }
 
 .loading-text {
-    font-size: 24px;
+    font-size: var(--loading-text-size);
     color: #808080;
+}
+
+.loading-text-container {
+    height: var(--loading-text-size);
 }
 
 :root {
@@ -230,4 +234,5 @@ li.wechat:hover .qrcode {
     --map-entrance-size: 48px;
     --map-entrance-radius: 10px;
     --map-entrance-width: 5px;
+    --loading-text-size: 24px;
 }

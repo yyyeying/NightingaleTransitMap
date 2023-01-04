@@ -4,6 +4,14 @@ import { setInfo } from "./set_info.js"
 var rootUrl = null;
 var mapName = null;
 
+var loadingText = ["正在铺平画纸...",
+    "正在准备画笔...",
+    "正在调颜料...",
+    "正在奋笔疾书...",
+    "正在绘制线路图...",
+    "正在装裱线路图...",
+    "正在悬挂线路图..."]
+
 var getMapInfo = (url, name) => {
     rootUrl = url;
     mapName = name;
@@ -12,6 +20,7 @@ var getMapInfo = (url, name) => {
 
 var getMapInfo2 = (mapInfo) => {
     //console.log(mapInfo);
+    document.getElementById("loading-text").innerHTML = loadingText[Math.floor(Math.random() * loadingText.length)];
     var mapUrl = rootUrl + "/" + mapName + "/" + mapInfo[mapInfo.length - 1].dir
     var mapImg = document.getElementById("map-img");
     var downloadBtn = document.getElementById("download-button")
