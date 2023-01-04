@@ -23,7 +23,7 @@ jobs:
           git add .
           git commit -m "auto update map info"
       - name: push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v0.6.0
         with: 
-          github_token: ${{ secrets.TRANSIT_MAP_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
