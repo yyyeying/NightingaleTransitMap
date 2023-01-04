@@ -2,7 +2,7 @@ name: update-map-info
 on:
   push:
     paths:
-      - 'maps/'
+      - '**.jpg'
 jobs:
   update-map-info:
     runs-on: ubuntu-latest
