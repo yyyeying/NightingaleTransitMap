@@ -1,0 +1,25 @@
+name: learn-github-actions
+on: push
+jobs:
+  update-map-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup-python
+        uses: actions/setup-python@v1
+        with: 
+          python-version: 3.8
+      - name: run-python-script
+        run: python ./build/get_map_info.py
+      - name: commit-changes
+        run: |
+          git config user.email henry687121@163.com
+          git config user.name yyyeying
+          git add .
+          git commit -m "auto update map info"
+      - name: push changes
+        uses: ad-m/github-push-action@master
+        with: 
+          github_token: $ {{ TRANSIT_MAP_TOKEN }}
+          branch: ${{ github.ref }}
