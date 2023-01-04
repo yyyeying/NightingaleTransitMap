@@ -105,7 +105,9 @@
 .map {
     height: auto;
     max-width: 100%;
+    min-width: 100%;
     padding-top: 20px;
+    text-align: center;
 }
 
 span.author {
@@ -203,12 +205,17 @@ li.wechat:hover .qrcode {
     }
 }
 
-.loading {
-    margin: 50px 100px;
-    padding: 100px;
-    text-align: center;
+.loading-anim {
+    padding-left: 50%;
+    padding-right: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
+.loading-text {
+    font-size: 24px;
+    color: #808080;
+}
 
 :root {
     --title-color: #000000;

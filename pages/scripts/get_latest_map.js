@@ -16,11 +16,13 @@ var getMapInfo2 = (mapInfo) => {
     var mapImg = document.getElementById("map-img");
     var downloadBtn = document.getElementById("download-button")
     mapImg.src = mapUrl + "/" + mapName + ".webp";
+    mapImg.style.display = "block";
+    downloadBtn.href = mapUrl + "/" + mapName + ".jpg";
+    document.getElementById("loading-anim").style.display = "none";
     mapImg.onload = () => {
         downloadBtn.style.display = "block";
-        downloadBtn.href = mapUrl + "/" + mapName + ".jpg";
-        mapImg.style.display = "block";
-        document.getElementById("loading").style.display = "none";
+        //mapImg.style.display = "block";
+        document.getElementById("loading-text").style.display = "none";
     }
     getJson(mapUrl + "/info.json", setInfo);
 }

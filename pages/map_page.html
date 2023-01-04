@@ -30,15 +30,15 @@
                 <span class="text" id="month"></span><span class="text">月</span>
                 <span class="text" id="day"></span><span class="text">日</span><br>
                 <span class="text">如果您持有的是移动设备，您可以通过手指缩放查看线路图的细节。</span><br>
-                <a href="./resources/images/loading.png" class="link" id="download-button" ,
+                <a href="./resources/images/loading.png" class="link" id="download-button"
                     style="display: none;">无法放大？点击此处</a>
+                <p class="info loading-text" id="loading-text" style="display: block;">
+                    画师正在赶来...
+                </p>
             </p>
         </div>
         <div>
-            <p style="text-align: center;">
-                <img src="./resources/images/loading.png" alt="map" class="map" , id="map-img" style="display: none;">
-            </p>
-            <div class="loading" id="loading">
+            <div class="loading-anim" id="loading-anim" style="display: block;">
                 <div class="sk-wave">
                     <div class="sk-wave-rect"></div>
                     <div class="sk-wave-rect"></div>
@@ -46,7 +46,11 @@
                     <div class="sk-wave-rect"></div>
                     <div class="sk-wave-rect"></div>
                 </div>
+                <br>
             </div>
+            <p style="text-align: center;">
+                <img src="./resources/images/white.webp" alt="map" class="map" , id="map-img" style="display: none;">
+            </p>
         </div>
         <div>
             <p class="info">
