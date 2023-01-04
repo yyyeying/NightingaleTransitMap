@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '**.jpg'
+      - '**.yml'
 jobs:
   update-map-info:
     runs-on: ubuntu-latest
@@ -24,5 +25,5 @@ jobs:
       - name: push changes
         uses: ad-m/github-push-action@master
         with: 
-          github_token: $ {{ TRANSIT_MAP_TOKEN }}
+          github_token: ${{ TRANSIT_MAP_TOKEN }}
           branch: ${{ github.ref }}
