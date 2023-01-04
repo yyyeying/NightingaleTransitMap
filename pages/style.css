@@ -206,7 +206,6 @@ li.wechat:hover .qrcode {
 .loading {
     margin: 50px 100px;
     padding: 100px;
-    border-bottom: 1px solid #eee;
     text-align: center;
 }
 
