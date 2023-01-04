@@ -32,7 +32,7 @@
 
 .map-entrance-warpper:hover .map-entrance{
     font-weight: bold;
-    text-shadow: 0px, 0px, 5px, white;
+    text-shadow: 2px, 2px, 5px, white;
 }
 
 .map-entrance {
@@ -140,6 +140,14 @@ p.info{
 
 ul{
     list-style: none;
+}
+
+img.qrcode{
+    display: none;
+}
+
+li.wechat:hover .qrcode{
+    display: block;
 }
 
 :root {
