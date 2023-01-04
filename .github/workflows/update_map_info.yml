@@ -2,7 +2,7 @@ name: learn-github-actions
 on:
   push:
     paths:
-      - '/maps/'
+      - 'maps/'
 jobs:
   update-map-info:
     runs-on: ubuntu-latest
