@@ -13,9 +13,15 @@ var getMapInfo = (url, name) => {
 var getMapInfo2 = (mapInfo) => {
     //console.log(mapInfo);
     var mapUrl = rootUrl + "/" + mapName + "/" + mapInfo[mapInfo.length - 1].dir
-    document.getElementById("map-img").src = mapUrl + "/" + mapName + ".jpg";
-    document.getElementById("download-button").style.visibility = "visible";
-    document.getElementById("download-button").src = mapUrl + "/" + mapName + ".jpg";
+    var mapImg = document.getElementById("map-img");
+    var downloadBtn = document.getElementById("download-button")
+    mapImg.src = mapUrl + "/" + mapName + ".jpg";
+    mapImg.onload = () => {
+        downloadBtn.style.display = "block";
+        downloadBtn.href = mapUrl + "/" + mapName + ".jpg";
+        mapImg.style.display = "block";
+        document.getElementById("loading").style.display = "none";
+    }
     getJson(mapUrl + "/info.json", setInfo);
 }
 

@@ -30,7 +30,7 @@
     background-image: url(./resources/images/map_entrance_background_brt.png);
 }
 
-.map-entrance-warpper:hover .map-entrance{
+.map-entrance-warpper:hover .map-entrance {
     font-weight: bold;
     text-shadow: 2px, 2px, 5px, white;
 }
@@ -108,52 +108,115 @@
     padding-top: 20px;
 }
 
-span.author{
+span.author {
     font-size: 24px;
     color: #808080;
 }
 
-span.text{
+span.text {
     font-size: 24px;
     color: #808080;
 }
 
-span.name{
+span.name {
     font-size: 24px;
     color: #000000;
 }
 
-span.little-title{
+span.little-title {
     font-size: 24px;
     color: #808080;
     font-weight: normal;
 }
 
-a:link{
+a:link {
     text-decoration: none;
 }
 
-p.info{
+p.info {
     padding-left: 40px;
     text-align: left;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-img.qrcode{
+img.qrcode {
     display: none;
 }
 
-li.wechat:hover .qrcode{
+li.wechat:hover .qrcode {
     display: block;
 }
+
+.link {
+    font-size: 24px;
+    color: rgb(27, 53, 109);
+}
+
+.link:hover {
+    font-weight: bold;
+}
+
+.sk-wave {
+    width: var(--sk-size);
+    height: var(--sk-size);
+    display: flex;
+    justify-content: space-between;
+}
+
+.sk-wave-rect {
+    background-color: var(--sk-color);
+    height: 100%;
+    width: 15%;
+    animation: sk-wave 1.2s infinite ease-in-out;
+}
+
+.sk-wave-rect:nth-child(1) {
+    animation-delay: -1.2s;
+}
+
+.sk-wave-rect:nth-child(2) {
+    animation-delay: -1.1s;
+}
+
+.sk-wave-rect:nth-child(3) {
+    animation-delay: -1.0s;
+}
+
+.sk-wave-rect:nth-child(4) {
+    animation-delay: -0.9s;
+}
+
+.sk-wave-rect:nth-child(5) {
+    animation-delay: -0.8s;
+}
+
+@keyframes sk-wave {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+    }
+
+    20% {
+        transform: scaleY(1);
+    }
+}
+
+.loading {
+    margin: 50px 100px;
+    padding: 100px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
 
 :root {
     --title-color: #000000;
     --title-color-alt: #808080;
     --menu-color: #04382f;
+    --sk-color: #04382f;
+    --sk-size: 40px;
     --menu-size: 36px;
     --background-color: #F8F8F8;
     --background-color-hover: #F8F8F8;
