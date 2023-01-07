@@ -6,7 +6,7 @@ var setInfo = (info) => {
     if (info.comment) {
         var commentHTML = "<ul>";
         for (let index = 0; index < info.comment.length; index++) {
-            const comment = info.comment[index];
+            var comment = info.comment[index];
             commentHTML += "<li><span class=\"text\">" + comment + "</span></li>";
         }
         commentHTML += "</ul>";
