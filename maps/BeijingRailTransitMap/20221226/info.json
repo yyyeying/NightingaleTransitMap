@@ -5,5 +5,9 @@
         "month": 12,
         "day": 26
     },
-    "latest": true
+    "latest": true,
+    "comment": [
+        "调整市郊铁路怀密线时刻表。",
+        "校正其他市郊铁路线路时刻表。"
+    ]
 }
