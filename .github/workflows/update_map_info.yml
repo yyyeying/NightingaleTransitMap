@@ -13,9 +13,12 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: setup-python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with: 
           python-version: 3.8
+          cache: 'pip'
+        run:
+          pip install -r requirements.txt
       - name: run-python-script
         run: python ./build/get_map_info.py
       - name: commit-changes
