@@ -32,7 +32,8 @@ if __name__ == "__main__":
             if not os.path.exists(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".webp")):
                 print("convert to webp")
                 im = Image.open(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".jpg")).convert("RGB")
-                im.save(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".webp"), "WEBP")
+                im.save(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".webp"), "WEBP", 
+                        lossless=False, quality=100, method=6)
         with open(os.path.join(MAP_DIR, dir, "info.json"), "w") as json_file:
             json.dump(map_list, json_file)
     print("***** get map info *****")
