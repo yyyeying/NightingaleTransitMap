@@ -1,8 +1,13 @@
 import os
 import json
+from tkinter import N
+from PIL import Image, ImageFile
 from typing import List
 
 MAP_DIR = os.path.join(os.getcwd(), "maps")
+
+ImageFile.LOAD_TRUNCATED_IMAGES = True
+Image.MAX_IMAGE_PIXELS = None
 
 if __name__ == "__main__":
     print("***** get map info *****")
@@ -24,6 +29,11 @@ if __name__ == "__main__":
             map_info = {"dir": single_map_dir,
                         "date": {"year": year, "month": month, "day": day}}
             map_list.append(map_info)
+            if not os.path.exists(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".webp")):
+                print("convert to webp")
+                im = Image.open(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".jpg")).convert("RGB")
+                im.save(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".webp"), "WEBP", 
+                        lossless=False, quality=100, method=6)
         with open(os.path.join(MAP_DIR, dir, "info.json"), "w") as json_file:
             json.dump(map_list, json_file)
     print("***** get map info *****")
