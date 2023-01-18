@@ -17,6 +17,7 @@ jobs:
         with: 
           python-version: 3.8
           cache: 'pip'
+      - name: install-requirements
         run:
           pip install -r requirements.txt
       - name: run-python-script
