@@ -1,6 +1,5 @@
 import os
 import json
-from tkinter import N
 from PIL import Image, ImageFile
 from typing import List
 
@@ -31,7 +30,7 @@ if __name__ == "__main__":
             map_list.append(map_info)
             if not os.path.exists(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".webp")):
                 print("convert to webp")
-                im = Image.open(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".jpg")).convert("RGB")
+                im = Image.open(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".jpg"))
                 im.save(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".webp"), "WEBP", 
                         lossless=False, quality=100, method=6)
         with open(os.path.join(MAP_DIR, dir, "info.json"), "w") as json_file:
