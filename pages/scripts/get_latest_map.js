@@ -29,6 +29,7 @@ var getMapInfo2 = (mapInfo) => {
     downloadBtn.href = mapUrl + "/" + mapName + ".jpg";
     document.getElementById("loading-anim").style.display = "none";
     mapImg.onload = () => {
+        // 加载完成后展示下载按钮
         downloadBtn.style.display = "block";
         //mapImg.style.display = "block";
         document.getElementById("loading-text").style.display = "none";
