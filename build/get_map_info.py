@@ -25,8 +25,14 @@ if __name__ == "__main__":
             year: int = int(single_map_dir[:4])
             month: int = int(single_map_dir[4:6])
             day: int = int(single_map_dir[6:8])
-            map_info = {"dir": single_map_dir,
-                        "date": {"year": year, "month": month, "day": day}}
+            map_info = {
+                "dir": single_map_dir,  
+                "date": {
+                    "year": year, 
+                    "month": month, 
+                    "day": day
+                }
+            }
             map_list.append(map_info)
             if not os.path.exists(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".webp")):
                 print("convert to webp")
@@ -34,5 +40,5 @@ if __name__ == "__main__":
                 im.save(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".webp"), "WEBP", 
                         lossless=False, quality=100, method=6)
         with open(os.path.join(MAP_DIR, dir, "info.json"), "w") as json_file:
-            json.dump(map_list, json_file)
+            json.dump(map_list, json_file, indent=4)
     print("***** get map info *****")
