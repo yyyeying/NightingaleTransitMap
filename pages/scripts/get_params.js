@@ -1,11 +1,15 @@
-var getParams = () => {
-    var params = {}
-    var paramsList = location.search.substring(1).split('&');
+const getParams = () => {
+    const params = {}
+    const paramsList = location.search.substring(1).split('&');
     //console.log(paramsList);
-    for (var p in paramsList) {
-        let paramPairs = paramsList[p].split('=');
-        params[paramPairs[0]] = paramPairs[1];
-    }
+    paramsList.forEach(param => {
+        const paramPairs = param.split('=');
+        if (paramPairs.length === 2) {
+            params[paramPairs[0]] = decodeURIComponent(paramPairs[1]);
+        } else {
+            console.error(`Invalid URL parameter format: ${param}`);
+        }
+    })
     //console.log(params);
     return params;
 }

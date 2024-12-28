@@ -1,4 +1,4 @@
-import {getJson} from "./get_json.js"
+import { getJson } from "./get_json.js"
 
 var url = "../maps/BeijingBRTMap";
 var latest = null;

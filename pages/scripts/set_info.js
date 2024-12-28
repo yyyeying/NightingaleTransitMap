@@ -1,20 +1,28 @@
 var setInfo = (info) => {
-    document.getElementById("version").innerHTML = info.version;
-    document.getElementById("year").innerHTML = info.time.year;
-    document.getElementById("month").innerHTML = info.time.month;
-    document.getElementById("day").innerHTML = info.time.day;
+    const versionElement = document.getElementById("version");
+    const yearElement = document.getElementById("year");
+    const monthElement = document.getElementById("month");
+    const dayElement = document.getElementById("day");
+    const commentElement = document.getElementById("comment");
+    const commentTitleElement = document.getElementById("comment-title");
+
+    versionElement.innerHTML = info.version;
+    yearElement.innerHTML = info.time.year;
+    monthElement.innerHTML = info.time.month;
+    dayElement.innerHTML = info.time.day;
+
     if (info.comment) {
-        var commentHTML = "<ul>";
+        let commentsList = [];
         for (let index = 0; index < info.comment.length; index++) {
-            var comment = info.comment[index];
-            commentHTML += "<li><span class=\"text\">" + comment + "</span></li>";
+            const comment = info.comment[index];
+            commentsList.push(`<li><span class="text">${comment}</span></li>`);
         }
-        commentHTML += "</ul>";
-        document.getElementById("comment").innerHTML = commentHTML;
+        const commentHTML = `<ul>${commentsList.join('')}</ul>`;
+        commentElement.innerHTML = commentHTML;
     } else {
-        document.getElementById("comment").style.display = "none";
-        document.getElementById("comment-title").style.display = "none";
+        commentElement.style.display = "none";
+        commentTitleElement.style.display = "none";
     }
 }
 
-export {setInfo}
+export { setInfo }

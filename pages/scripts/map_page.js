@@ -2,20 +2,31 @@ import { getMapInfo } from "./get_latest_map.js"
 import { getParams } from "./get_params.js"
 import { rootUrl, mapDirs, mapNames } from "./config.js"
 
+const params = getParams();
+const mapNameParam = params.name;
 
-
-var getMapDir = () => {
-    var params = getParams();
-    return mapDirs[params.name];
+const getMapDir = () => {
+    const dir = mapDirs[mapNameParam];
+    if (!dir) {
+        throw new Error(`Map directory for '${mapNameParam}' not found.`);
+    }
+    return dir;
 }
 
-var getMapName = () => {
-    var params = getParams();
-    return mapNames[params.name];
+const getMapName = () => {
+    const name = mapNames[mapNameParam];
+    if (!name) {
+        throw new Error(`Map name for '${mapNameParam}' not found.`);
+    }
+    return name;
 }
 
-document.getElementById("map-name").innerHTML = getMapName();
-getMapInfo(rootUrl, getMapDir());
+try {
+    document.getElementById("map-name").innerHTML = getMapName();
+    getMapInfo(rootUrl, getMapDir());
+} catch (error) {
+    console.error("An error occurred:", error.message);
+}
 
 
 
