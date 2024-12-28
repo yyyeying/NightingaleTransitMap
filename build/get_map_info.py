@@ -38,7 +38,9 @@ if __name__ == "__main__":
                 print("convert to webp")
                 im = Image.open(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".jpg"))
                 im.save(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".webp"), "WEBP", 
-                        lossless=False, quality=100, method=6)
+                        lossless=False, 
+                        quality=100,
+                        method=6)
         with open(os.path.join(MAP_DIR, dir, "info.json"), "w") as json_file:
-            json.dump(map_list, json_file, indent=4)
+            json.dump(map_list, json_file, indent=4, ensure_ascii=False)
     print("***** get map info *****")
