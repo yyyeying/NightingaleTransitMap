@@ -12,7 +12,7 @@ const loadingText = ["正在铺平画纸...",
     "正在装裱线路图...",
     "正在悬挂线路图..."]
 
-const getMapInfo = (url, name) => {
+const getMapInfo = (url, name, callback) => {
     rootUrl = url;
     mapName = name;
     getJson(`${rootUrl}/${mapName}/info.json`, (mapInfo) => {
@@ -29,8 +29,10 @@ const getMapInfo = (url, name) => {
         mapImg.onload = () => {
             // 加载完成后展示下载按钮
             downloadBtn.style.display = "block";
-            //mapImg.style.display = "block";
             document.getElementById("loading-text").style.display = "none";
+            if (callback) {
+                callback(mapImg);
+            }
         }
         getJson(`${mapUrl}/info.json`, setInfo);
     });

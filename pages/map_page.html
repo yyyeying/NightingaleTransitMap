@@ -7,6 +7,7 @@
     <style type="text/css">
         @import url(style.css);
     </style>
+    <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
     <script type="module" , src="./scripts/map_page.js"></script>
 </head>
 
@@ -48,9 +49,9 @@
                 </div>
                 <br>
             </div>
-            <p style="text-align: center;">
+            <div id="map-container" style="width: 100%; height: 80vh; overflow: hidden; cursor: grab;">
                 <img src="./resources/images/white.webp" alt="map" class="map" , id="map-img" style="display: none;">
-            </p>
+            </div>
         </div>
         <div>
             <p id="comment-title" class="info" style="display: block;">
