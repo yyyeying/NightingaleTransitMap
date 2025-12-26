@@ -30,6 +30,23 @@ const getMapInfo = (url, name, callback) => {
             // 加载完成后展示下载按钮
             downloadBtn.style.display = "block";
             document.getElementById("loading-text").style.display = "none";
+            
+            // 调整容器高度以适应图片尺寸
+            const container = document.getElementById("map-container");
+            const imgRatio = mapImg.naturalWidth / mapImg.naturalHeight;
+            
+            // 根据图片比例计算合适的高度
+            const containerWidth = container.clientWidth;
+            const calculatedHeight = containerWidth / imgRatio;
+            
+            // 设置容器高度为图片的合适比例
+            container.style.height = `${calculatedHeight * 1.01}px`;
+            
+            // 确保图片填充整个容器
+            mapImg.style.width = "100%";
+            mapImg.style.height = "100%";
+            mapImg.style.objectFit = "contain";
+            
             if (callback) {
                 callback(mapImg);
             }
