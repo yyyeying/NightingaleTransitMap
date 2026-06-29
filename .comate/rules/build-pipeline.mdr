@@ -1,0 +1,38 @@
+---
+description: 添加/修改地图版本数据与构建脚本时的约定(运行 build、目录命名、info.json/latest.json 结构)
+globs: build/**/*.py, maps/**
+alwaysApply: false
+---
+
+# 构建与数据约定
+
+## 添加新版本地图
+
+1. 在 `maps/<MapName>/` 下新建 `<YYYYMMDD>/` 目录(目录名必须是 8 位日期)。
+2. 放入 `.jpg` 原图。
+3. 手写该目录的 `info.json`:
+   ```json
+   {
+       "version": "x.y.z",
+       "time": { "year": 2026, "month": 6, "day": 30 },
+       "latest": true,
+       "comment": ["更新说明1", "更新说明2"]
+   }
+   ```
+   `time` 必须与目录名日期一致。
+4. 在仓库根目录运行 `python build/get_map_info.py`。
+
+## 构建脚本行为
+
+`build/get_map_info.py` 会:
+
+- 解析每个 `maps/<MapName>/<YYYYMMDD>/` 目录名前 8 位为年/月/日
+- 若对应 `.webp` 不存在,用 Pillow 把 `.jpg` 转为 `.webp`(quality=100, method=6)
+- 生成顶层 `maps/<MapName>/info.json`(全部版本数组,`time` 键)
+- 生成 `maps/<MapName>/latest.json`(仅最新版本单项,`time` 键)
+
+## 禁止
+
+- 不要手改顶层 `info.json` 与 `latest.json`(由脚本生成)。
+- 不要用 `date` 键,统一用 `time`(代码 `set_info.js` 读取 `info.time`)。
+- `time` 与目录名日期不一致会导致页面显示错误日期。

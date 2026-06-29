@@ -26,10 +26,10 @@ if __name__ == "__main__":
             month: int = int(single_map_dir[4:6])
             day: int = int(single_map_dir[6:8])
             map_info = {
-                "dir": single_map_dir,  
-                "date": {
-                    "year": year, 
-                    "month": month, 
+                "dir": single_map_dir,
+                "time": {
+                    "year": year,
+                    "month": month,
                     "day": day
                 }
             }
@@ -37,10 +37,13 @@ if __name__ == "__main__":
             if not os.path.exists(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".webp")):
                 print("convert to webp")
                 im = Image.open(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".jpg"))
-                im.save(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".webp"), "WEBP", 
-                        lossless=False, 
+                im.save(os.path.join(MAP_DIR, dir, single_map_dir, dir + ".webp"), "WEBP",
+                        lossless=False,
                         quality=100,
                         method=6)
         with open(os.path.join(MAP_DIR, dir, "info.json"), "w") as json_file:
             json.dump(map_list, json_file, indent=4, ensure_ascii=False)
+        # 同时输出仅包含最新版本的 latest.json，避免页面加载时拉取全部历史版本
+        with open(os.path.join(MAP_DIR, dir, "latest.json"), "w") as json_file:
+            json.dump(map_list[-1], json_file, indent=4, ensure_ascii=False)
     print("***** get map info *****")

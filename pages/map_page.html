@@ -3,18 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="夜莺自制的北京公共交通线路图在线查看，支持缩放查看细节。">
+    <meta property="og:title" content="夜莺自制的线路图">
+    <meta property="og:description" content="夜莺自制的北京公共交通线路图在线查看，支持缩放查看细节。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="./resources/images/title.webp" type="image/webp">
+    <link rel="stylesheet" href="style.css">
     <title>夜莺自制的线路图</title>
-    <style type="text/css">
-        @import url(style.css);
-    </style>
-    <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
-    <script type="module" , src="./scripts/map_page.js"></script>
+    <script src="./scripts/vendor/panzoom.min.js" defer></script>
+    <script type="module" src="./scripts/map_page.js"></script>
 </head>
 
 <body>
     <div class="background">
         <div class="title-wrapper">
-            <img src="./resources/images/title.webp" class="title-img">
+            <img src="./resources/images/title.webp" class="title-img" alt="夜莺自制线路图标题图">
             <div class="title-wrapper">
                 <p><span class="title-alt">夜莺自制的</span><br><span class="title" id="map-name">还不知道是什么线路图</span></p>
             </div>
@@ -31,11 +35,11 @@
                 <span class="text" id="month"></span><span class="text">月</span>
                 <span class="text" id="day"></span><span class="text">日</span><br>
                 <span class="text">如果您持有的是移动设备，您可以通过手指缩放查看线路图的细节。</span><br>
-                <a href="./resources/images/loading.png" class="link" id="download-button" target="_blank" 
+                <a href="#" class="link" id="download-button" target="_blank"
                     style="display: none;">无法放大？点击此处</a>
-                <p class="info loading-text" id="loading-text" style="display: block;">
+                <span class="info loading-text" id="loading-text" style="display: block;">
                     画师正在赶来...
-                </p>
+                </span>
             </p>
         </div>
         <div>
@@ -49,20 +53,20 @@
                 </div>
                 <br>
             </div>
-            <div id="map-container" style="width: 100%; height: 80vh; overflow: hidden; cursor: grab;">
-                <img src="./resources/images/white.webp" alt="map" class="map" , id="map-img" style="display: none;">
+            <div id="map-container" style="width: 100%; overflow: hidden; cursor: grab;">
+                <img src="./resources/images/white.webp" alt="线路图" class="map" id="map-img" style="display: none;">
             </div>
         </div>
         <div>
             <p id="comment-title" class="info" style="display: block;">
                 <span class="little-title">本次更新内容</span>
             </p>
-            <p id="comment" class="info" style="display: block;">
-            </p>
+            <div id="comment" class="info" style="display: block;">
+            </div>
         </div>
         <div>
-            <p class="info">
-                <span class="little-title">声明</span>
+            <div class="info">
+                <p><span class="little-title">声明</span></p>
                 <ul>
                     <li>
                         <span class="text">作品受著作权法保护。在未经授权的前提下，本线路图不可用于任何商业用途。</span>
@@ -94,7 +98,7 @@
                         </ul>
                     </li>
                 </ul>
-            </p>
+            </div>
         </div>
         <div>
             <p class="info">
@@ -102,30 +106,31 @@
                 <a href="https://github.com/yyyeying/NightingaleTransitMap" class="link">GitHub</a>
                 <a href="https://gitee.com/yyyeying/nightingale-transit-map" class="link">Gitee</a>
             </p>
-            <p class="info">
-                <span class="little-title">联系作者</span>
-            <ul>
-                <li>
-                    <a href="https://weibo.com/yyyeying/profile" class="link">
-                        <span class="author">微博</span>
-                        <span class="name">夜莺夜影XWB</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://space.bilibili.com/5379445" class="link">
-                        <span class="author">B站</span>
-                        <span class="name">夜莺夜影</span>
-                    </a>
-                </li>
-                <li class="wechat">
-                    <a class="link">
-                        <span class="author">公众号</span>
-                        <span class="name">夜语莺声</span>
-                    </a>
-                    <img src="./resources/images/qrcode.webp" class="qrcode" alt="QR code">
-                </li>
-            </ul>
-            </p>
+            <!-- 以下联系作者区块与 index.html 中的同名区块内容相同，修改时请同步两处 -->
+            <div class="info">
+                <p><span class="little-title">联系作者</span></p>
+                <ul>
+                    <li>
+                        <a href="https://weibo.com/yyyeying/profile" class="link">
+                            <span class="author">微博</span>
+                            <span class="name">夜莺夜影XWB</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://space.bilibili.com/5379445" class="link">
+                            <span class="author">B站</span>
+                            <span class="name">夜莺夜影</span>
+                        </a>
+                    </li>
+                    <li class="wechat">
+                        <a class="link" tabindex="0">
+                            <span class="author">公众号</span>
+                            <span class="name">夜语莺声</span>
+                        </a>
+                        <img src="./resources/images/qrcode.webp" class="qrcode" alt="夜语莺声公众号二维码">
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>

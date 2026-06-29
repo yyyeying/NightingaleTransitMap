@@ -3,16 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <style type="text/css">
-        @import url(./pages/style.css);
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="夜莺自制的北京公共交通线路图，包含北京市轨道交通线路图、夜班车线路图和快速公交线路图。">
+    <meta property="og:title" content="夜莺自制的线路图">
+    <meta property="og:description" content="夜莺自制的北京公共交通线路图，包含轨道交通、夜班车和快速公交线路图。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="./pages/resources/images/title.webp" type="image/webp">
+    <link rel="stylesheet" href="./pages/style.css">
     <title>夜莺自制的线路图</title>
 </head>
 
 <body>
     <div class="background">
         <div>
-            <img src="./pages/resources/images/title.webp" class="title-img">
+            <img src="./pages/resources/images/title.webp" class="title-img" alt="夜莺自制线路图标题图">
             <div class="title-wrapper">
                 <p><span class="title-alt">夜莺自制的</span><br><span class="title">线路图</span></p>
             </div>
@@ -35,33 +39,34 @@
         <div>
             <p class="info">
                 <span class="author">项目地址  </span>
-                <a href="https://github.com/yyyeying/NightingaleTransitMap" class="link">GitHub</a>  
-                <a href="https://gitee.com/yyyeying/nightingale-transit-map" class="link">Gitee</a>  
+                <a href="https://github.com/yyyeying/NightingaleTransitMap" class="link">GitHub</a>
+                <a href="https://gitee.com/yyyeying/nightingale-transit-map" class="link">Gitee</a>
             </p>
-            <p class="info">
-                <span class="little-title">联系作者</span>
-            <ul>
-                <li>
-                    <a href="https://weibo.com/yyyeying/profile" class="link">
-                        <span class="author">微博</span>  
-                        <span class="name">夜莺夜影XWB</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://space.bilibili.com/5379445" class="link">
-                        <span class="author">B站</span>  
-                        <span class="name">夜莺夜影</span>
-                    </a>
-                </li>
-                <li class="wechat">
-                    <a class="link">
-                        <span class="author">公众号</span>   
-                        <span class="name">夜语莺声</span>
-                    </a>
-                    <img src="./pages/resources/images/qrcode.webp" class="qrcode" alt="QR code">
-                </li>
-            </ul>
-            </p>
+            <!-- 以下联系作者区块与 map_page.html 中的同名区块内容相同，修改时请同步两处 -->
+            <div class="info">
+                <p><span class="little-title">联系作者</span></p>
+                <ul>
+                    <li>
+                        <a href="https://weibo.com/yyyeying/profile" class="link">
+                            <span class="author">微博</span>
+                            <span class="name">夜莺夜影XWB</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://space.bilibili.com/5379445" class="link">
+                            <span class="author">B站</span>
+                            <span class="name">夜莺夜影</span>
+                        </a>
+                    </li>
+                    <li class="wechat">
+                        <a class="link" tabindex="0">
+                            <span class="author">公众号</span>
+                            <span class="name">夜语莺声</span>
+                        </a>
+                        <img src="./pages/resources/images/qrcode.webp" class="qrcode" alt="夜语莺声公众号二维码">
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>

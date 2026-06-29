@@ -1,6 +1,6 @@
 .map-entrance-warpper {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: clamp(40px, 12vw, 100px);
+    padding-bottom: clamp(40px, 12vw, 100px);
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: 40%;
@@ -32,7 +32,7 @@
 
 .map-entrance-warpper:hover .map-entrance {
     font-weight: bold;
-    text-shadow: 2px, 2px, 5px, white;
+    text-shadow: 2px 2px 5px white;
 }
 
 .map-entrance {
@@ -103,6 +103,7 @@
 }
 
 .map {
+    display: block;
     height: auto;
     max-width: 100%;
     min-width: 100%;
@@ -148,7 +149,8 @@ img.qrcode {
     display: none;
 }
 
-li.wechat:hover .qrcode {
+li.wechat:hover .qrcode,
+li.wechat:focus-within .qrcode {
     display: block;
 }
 
@@ -230,12 +232,44 @@ li.wechat:hover .qrcode {
     --menu-color: #04382f;
     --sk-color: #04382f;
     --sk-size: 40px;
-    --menu-size: 36px;
+    --menu-size: clamp(20px, 5vw, 36px);
     --background-color: #F8F8F8;
     --background-color-hover: #F8F8F8;
-    --title-size: 60px;
-    --map-entrance-size: 48px;
+    --title-size: clamp(32px, 8vw, 60px);
+    --map-entrance-size: clamp(24px, 6vw, 48px);
     --map-entrance-radius: 10px;
     --map-entrance-width: 5px;
-    --loading-text-size: 24px;
+    --loading-text-size: clamp(16px, 3vw, 24px);
+}
+
+@media (max-width: 600px) {
+    .title,
+    .title-alt,
+    .menu,
+    .map-entrance {
+        padding-left: 16px;
+    }
+
+    p.info {
+        padding-left: 16px;
+    }
+
+    span.author,
+    span.name,
+    .link {
+        font-size: 18px;
+    }
+
+    span.text {
+        font-size: 16px;
+    }
+
+    span.little-title {
+        font-size: 22px;
+    }
+
+    .loading-anim {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }

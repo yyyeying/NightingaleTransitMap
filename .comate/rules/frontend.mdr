@@ -1,0 +1,30 @@
+---
+description: 前端(HTML/CSS/原生 JS)开发约定:架构、数据获取、XSS 防护、响应式、通用查看页模式
+globs: pages/**, index.html
+alwaysApply: false
+---
+
+# 前端开发约定
+
+## 架构
+
+- 原生 ES 模块,无框架、无打包步骤。
+- 所有地图共用 `pages/map_page.html?name=<key>`,地图通过 `pages/scripts/config.js` 的 `mapDirs` / `mapNames` 注册。不要为单张地图新建独立 HTML 页(legacy 独立页已删除)。
+- Panzoom 已本地化到 `pages/scripts/vendor/panzoom.min.js`,用 `<script defer>` 加载。勿改回 unpkg CDN。
+
+## 数据获取与安全
+
+- 用 `fetch`(见 `get_json.js`),不要回退到 XMLHttpRequest。
+- 来自 JSON 等外部数据的内容,必须用 `textContent` 或 DOM API(`createElement` / `replaceChildren`)写入,**禁止** `innerHTML` 拼接(防 XSS)。参考 `set_info.js`。
+
+## 加载与图片
+
+- 加载动画/文案只能在图片 `onload` 后隐藏(见 `get_latest_map.js`),不要在设置 `src` 时就隐藏。
+- 图片加载失败(`onerror`)时显示兜底下载链接。
+- 地图容器高度由图片自然宽高比撑开,不要写死 `height` 或用 JS 计算容器高度。
+
+## 样式
+
+- 复用 `:root` 中的 CSS 自定义属性。
+- 响应式字号用 `clamp()`,小屏适配在 `@media (max-width:600px)` 内调整。
+- `index.html` 与 `map_page.html` 的"联系作者"区块内容相同,修改需同步两处。

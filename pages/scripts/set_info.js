@@ -6,19 +6,22 @@ var setInfo = (info) => {
     const commentElement = document.getElementById("comment");
     const commentTitleElement = document.getElementById("comment-title");
 
-    versionElement.innerHTML = info.version;
-    yearElement.innerHTML = info.time.year;
-    monthElement.innerHTML = info.time.month;
-    dayElement.innerHTML = info.time.day;
+    versionElement.textContent = info.version;
+    yearElement.textContent = info.time.year;
+    monthElement.textContent = info.time.month;
+    dayElement.textContent = info.time.day;
 
-    if (info.comment) {
-        let commentsList = [];
-        for (let index = 0; index < info.comment.length; index++) {
-            const comment = info.comment[index];
-            commentsList.push(`<li><span class="text">${comment}</span></li>`);
+    if (info.comment && info.comment.length) {
+        const ul = document.createElement("ul");
+        for (const comment of info.comment) {
+            const li = document.createElement("li");
+            const span = document.createElement("span");
+            span.className = "text";
+            span.textContent = comment;
+            li.appendChild(span);
+            ul.appendChild(li);
         }
-        const commentHTML = `<ul>${commentsList.join('')}</ul>`;
-        commentElement.innerHTML = commentHTML;
+        commentElement.replaceChildren(ul);
     } else {
         commentElement.style.display = "none";
         commentTitleElement.style.display = "none";

@@ -1,22 +1,16 @@
-const getJson = (url, furtherWork) => {
-    const request = new XMLHttpRequest();
-    request.onreadystatechange = (e) => {
-        if (request.status === 200 && request.readyState === 4) {
-            try {
-                const jsonObj = JSON.parse(request.responseText);
-                console.log(jsonObj);
-                if (typeof furtherWork === 'function') {
-                    furtherWork(jsonObj);
-                } else {
-                    console.error('The provided callback is not a function.');
-                }
-            } catch (error) {
-                console.error('Error parsing JSON:', error);
-            }
+const getJson = async (url, furtherWork) => {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status} for ${url}`);
         }
+        const jsonObj = await response.json();
+        if (typeof furtherWork === 'function') {
+            furtherWork(jsonObj);
+        }
+    } catch (error) {
+        console.error(`Failed to fetch ${url}:`, error);
     }
-    request.open("GET", url, true);
-    request.send(null);
 }
 
 export { getJson };
